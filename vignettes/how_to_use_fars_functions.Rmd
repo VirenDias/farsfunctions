@@ -1,0 +1,52 @@
+---
+title: "How to Use FARS Functions"
+author: "Viren Dias"
+date: "2018-03-14"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(farsfunctions)
+```
+
+This document will explain how to use the FARS functions to analyse accident data.
+
+## Reading a CSV File
+
+To read a CSV file and return a data frame table of the data, you should use the *fars_read* function. To make things easier, use it in conjunction with the *make_filename* function and specify the year of data you would like to read.
+
+```{r}
+fars_read(make_filename(2015))
+```
+
+## Reading Accident Data Across Multiple Years
+
+To read accident data across multiple years, you should use the *fars_read_years* function and specify the years of data you would like to read.
+
+```{r}
+fars_read_years(c(2013, 2014, 2015))
+```
+
+## Summarizing Accident Data Across Multiple Years
+
+To summarize accident data across multiple years, you should use the *fars_summarize_years* function and specify the years of data you would like to summarize.
+
+```{r}
+fars_summarize_years(c(2013, 2014, 2015))
+```
+
+## Plotting Accident Data
+
+To plot accident data on a geographical map, you should use the *fars_map_state function*, and specify the state number and year of accident data to plot.
+
+```{r}
+fars_map_state(1, 2015)
+```

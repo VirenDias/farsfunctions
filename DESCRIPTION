@@ -1,0 +1,25 @@
+Package: farsfunctions
+Type: Package
+Title: Analyse FARS Data
+Version: 1.1.0
+Author: Viren Dias
+Maintainer: Viren Dias <chootyviren@gmail.com>
+Description: This package has several functions that can; read a FARS CSV file and
+    return a data frame of detailed information about accidents that occured in a
+    specified year, summarize accidents that have occurred in each month across
+    several specified years, and plot accidents on a geographical map of a
+    specified US state for a specified year.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr,
+    tidyr,
+    readr,
+    magrittr,
+    maps,
+    graphics
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
