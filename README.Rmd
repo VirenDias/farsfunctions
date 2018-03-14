@@ -1,0 +1,63 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+library(farsfunctions)
+```
+
+# Coursera Assignment for Building an R Package
+
+My build is passing on AppVeyor and Travis!
+
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/VirenDias/farsfunctions?branch=master&svg=true)](https://ci.appveyor.com/project/VirenDias/farsfunctions)
+
+[![Travis-CI Build Status](https://travis-ci.org/VirenDias/farsfunctions.svg?branch=master)](https://travis-ci.org/VirenDias/farsfunctions)
+
+## Installation
+
+You can install farsfunctions from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("VirenDias/farsfunctions")
+```
+
+## Reading a CSV File
+
+To read a CSV file and return a data frame table of the data, you should use the *fars_read* function. To make things easier, use it in conjunction with the *make_filename* function and specify the year of data you would like to read.
+
+```{r}
+fars_read(make_filename(2015))
+```
+
+## Reading Accident Data Across Multiple Years
+
+To read accident data across multiple years, you should use the *fars_read_years* function and specify the years of data you would like to read.
+
+```{r}
+fars_read_years(c(2013, 2014, 2015))
+```
+
+## Summarizing Accident Data Across Multiple Years
+
+To summarize accident data across multiple years, you should use the *fars_summarize_years* function and specify the years of data you would like to summarize.
+
+```{r}
+fars_summarize_years(c(2013, 2014, 2015))
+```
+
+## Plotting Accident Data
+
+To plot accident data on a geographical map, you should use the *fars_map_state function*, and specify the state number and year of accident data to plot.
+
+```{r}
+fars_map_state(1, 2015)
+```
